@@ -1,0 +1,46 @@
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Scooby1#' --name mssqldb-2017 -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
+docker cp  /home/madhan/kafka/TestDB-2021627-16-47-11.bak mssqldb-2017:/var/opt/mssql/data
+
+docker exec -it connect sh
+tail -f /tmp/kafka-ouput.txt
+
+org.apache.kafka.connect.storage.StringConverter 
+org.apache.kafka.connect.storage.StringConverter 
+
+
+{
+  "fields": [
+    {
+      "logicalType": "time-millis",
+      "name": "trade_date",
+      "type": "int"
+    },
+    {
+      "name": "ext_acc",
+      "type": "int"
+    },
+    {
+      "name": "modified_by",
+      "type": "string"
+    },
+    {
+      "name": "currency",
+      "type": "string"
+    },
+    {
+      "name": "amount",
+      "type": "float"
+    },
+    {
+      "logicalType": "time-millis",
+      "name": "modified_date",
+      "type": "int"
+    },
+    {
+      "name": "file_path",
+      "type": "string"
+    }
+  ],
+  "name": "excess_cash",
+  "type": "record"
+}

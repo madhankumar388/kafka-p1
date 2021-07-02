@@ -4,10 +4,10 @@ docker cp  /home/madhan/kafka/TestDB-2021627-16-47-11.bak mssqldb-2017:/var/opt/
 docker exec -it connect sh
 tail -f /tmp/kafka-ouput.txt
 
-org.apache.kafka.connect.storage.StringConverter 
+# Key Convertor class
 org.apache.kafka.connect.storage.StringConverter 
 
-
+# Value Schema
 {
   "fields": [
     {

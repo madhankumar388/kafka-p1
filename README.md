@@ -4,7 +4,7 @@
 
 Reference : https://docs.confluent.io/platform/current/quickstart/ce-docker-quickstart.html
 
-Environment Setup:
+- Environment Setup:
 OS: Ubuntu 20.04 LTS (WSL or VirtualMachine - prefferd )
 
 1. Install Docker & Docker Compose

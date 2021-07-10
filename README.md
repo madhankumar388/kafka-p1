@@ -1,4 +1,9 @@
 # kafka-p1
+
+[![Open in Visual Studio Code]
+(https://open.vscode.dev/badges/open-in-vscode.svg)]
+(https://open.vscode.dev/madhankumar388/kafka-p1)
+
 Test Kafka Project using Python, Docker &amp; MS SQL Server on Linux
 
 Reference : https://docs.confluent.io/platform/current/quickstart/ce-docker-quickstart.html

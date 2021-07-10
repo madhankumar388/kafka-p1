@@ -25,7 +25,6 @@ services:
     environment: 
       ACCEPT_EULA: 'Y' 
       SA_PASSWORD: 'Password1#'
-    command: /bin/sh -c "mkdir /db_backup"
     volumes:
       - ./db_backup:/db_backup
 

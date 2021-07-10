@@ -11,15 +11,10 @@ services:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
 
-  my-dev-container:
+  md1:
     image: ubuntu:focal
-    hostname: ubuntu.focal.my-dev-container
-    container_name: my-dev-container
-        ports:
-      - "2181:2181"
-    environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
+    hostname: md1
+    container_name: md1
 
   broker1:
     image: confluentinc/cp-server:6.2.0

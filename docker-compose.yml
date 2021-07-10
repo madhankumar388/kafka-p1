@@ -13,8 +13,18 @@ services:
 
   my-dev-container:
     image: ubuntu:focal
-    hostname: my-dev-container.ubuntu.focal
+    hostname: my-dev-container
     container_name: my-dev-container
+
+  mssqldb-2017:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    hostname: mssqldb-2017
+    container_name: mssqldb-2017
+    ports:
+      - "1433":"1433"
+    environment: 
+      ACCEPT_EULA: 'Y' 
+      SA_PASSWORD: 'Password1#'
 
   broker1:
     image: confluentinc/cp-server:6.2.0

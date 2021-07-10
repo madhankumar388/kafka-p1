@@ -21,7 +21,7 @@ services:
     hostname: mssqldb-2017
     container_name: mssqldb-2017
     ports:
-      - "1433":"1433"
+      - "1433:1433"
     environment: 
       ACCEPT_EULA: 'Y' 
       SA_PASSWORD: 'Password1#'

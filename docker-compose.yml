@@ -16,10 +16,10 @@ services:
     hostname: my-dev-container
     container_name: my-dev-container
 
-  mssqldb-2017:
-    image: mcr.microsoft.com/mssql/server:2017-latest
-    hostname: mssqldb-2017
-    container_name: mssqldb-2017
+  mssqldb-2019:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    hostname: mssqldb-2019
+    container_name: mssqldb-2019
     ports:
       - "1433:1433"
     environment: 

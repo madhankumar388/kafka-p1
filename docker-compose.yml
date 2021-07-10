@@ -27,6 +27,7 @@ services:
       SA_PASSWORD: 'Password1#'
     volumes:
       - ./db_backup:/db_backup
+    command: /bin/sh -c "chmod +x /db_backup/restoredb.sh; ./restoredb.sh;"
 
 
   broker1:

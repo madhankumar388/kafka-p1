@@ -14,6 +14,14 @@ OS: Ubuntu 20.04 LTS (WSL or VirtualMachine - prefferd )
 # start a a ms-sql-Server 2017 database in docker
 docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1#' --name mssqldb-2017 -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
 
+# Restore the Database , run the below in the terminal
+docker cp TestDB-2021627-16-47-11.bak mssqldb-2017:/
+
+# Run the below inside Asure Data studio
+RESTORE DATABASE TestDB
+FROM DISK = '/TestDB-2021627-16-47-11.bak'
+WITH REPLACE
+
 # start a 4 node confluent kafka cluster in docker 
 docker-compose up -d
 ```

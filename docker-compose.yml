@@ -28,7 +28,7 @@ services:
       SA_PASSWORD: 'Password1#'
     volumes:
       - ./db_backup:/db_backup
-    entrypoint: "/db_backup/restoredb.sh"
+    entrypoint: /db_backup/restoredb.sh
 
   broker1:
     image: confluentinc/cp-server:6.2.0

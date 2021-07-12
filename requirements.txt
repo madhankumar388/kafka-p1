@@ -4,3 +4,5 @@ certifi
 confluent-kafka[avro,json,protobuf]>=1.4.2
 jupyterlab
 nodejs
+pyodbc
+kafka-python

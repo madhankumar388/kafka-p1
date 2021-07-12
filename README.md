@@ -26,7 +26,12 @@ python3 -m pip install -r requirements.txt
 ```
 7. Install the Microsoft ODBC driver for SQL Server (Linux)\
 https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15
-8. Execute the Python Producer (mssql-pyodbc.py) inside the python virtual environment.
-9. Avro Schema for the Key and value of the records can be found in the repo info.txt
-10. Create a File Sink connector using Confluent control center to stream the records to an output file.
+
+8. Start Jupyterlap lab and open it in your browser
+```
+jupyter lab --no-browser
+```
+9. Execute the Python Producer (mssql-pyodbc.py) inside the python virtual environment.
+10. Avro Schema for the Key and value of the records can be found in the repo info.txt
+11. Create a File Sink connector using Confluent control center to stream the records to an output file.
 

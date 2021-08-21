@@ -12,7 +12,7 @@ producer = KafkaProducer(bootstrap_servers='localhost:9091', value_serializer=la
 server = 'localhost' 
 database = 'TestDB' 
 username = 'sa' 
-password = 'Scooby1#' 
+password = 'Password1#' 
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 cursor = cnxn.cursor()
 

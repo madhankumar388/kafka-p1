@@ -14,7 +14,7 @@ OS: Ubuntu 20.04 LTS (WSL or VirtualMachine - prefferd )
   ```
 docker-compose up -d
   ```
-5.  Open Confluent Contrl Center link below and wait till the cluster is healthy. 
+5.  Open Confluent Contrl Center link below and wait till the cluster is healthy.\ 
 http://localhost:9021/clusters
 
 6. Create Python Virtual enviromnment, activate it and install requirements.txt\
@@ -30,6 +30,7 @@ https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-micro
 8. Start Jupyterlap lab and open it in your browser
 ```
 jupyter lab --no-browser
+# wsl --shutdown if you are unable to open jupyterlab on local host
 ```
 9. Execute the Python Producer (mssql-pyodbc.py) inside the python virtual environment.
 10. Avro Schema for the Key and value of the records can be found in the repo info.txt

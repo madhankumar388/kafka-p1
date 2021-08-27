@@ -12,9 +12,9 @@ OS: Ubuntu 20.04 LTS (WSL or VirtualMachine - prefferd )
 3. Clone this repo and switch to main branch
 4. Open Terminal and start the containers
   ```
-docker-compose up -d
+docker compose up -d
   ```
-5.  Open Confluent Contrl Center link below and wait till the cluster is healthy. 
+5.  Open Confluent Contrl Center link below and wait till the cluster is healthy.\ 
 http://localhost:9021/clusters
 
 6. Create Python Virtual enviromnment, activate it and install requirements.txt\
@@ -31,7 +31,26 @@ https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-micro
 ```
 jupyter lab --no-browser
 ```
-9. Execute the Python Producer (mssql-pyodbc.py) inside the python virtual environment.
-10. Avro Schema for the Key and value of the records can be found in the repo info.txt
-11. Create a File Sink connector using Confluent control center to stream the records to an output file.
+9.1 Install JDBC Sink connector in the connect container, and copy the config files into the container
+```
+docker exec -it connect /bin/bash
+confluent-hub install confluentinc/kafka-connect-jdbc:latest
+option 2
+N
+/home/appuser/pluggins
+y
+y
 
+docker cp /home/madhan/git/kafka-p1/connect-avro-standalone.properties connect:/etc/schema-registry/connect-avro-standalone.properties
+docker cp /home/madhan/git/kafka-p1/connector.properties connect:/etc/schema-registry/connector.properties
+```
+9.2 Start the connector
+```
+/bin/connect-standalone /etc/schema-registry/connect-avro-standalone.properties /etc/schema-registry/connector.properties
+```
+9.3 Execute the Python Producer (source/my_producer1.ipynb) inside the python virtual environment.
+9.4 Login to the database using Data Studio and see the magic happen.
+
+
+10.1 Execute the Python Producer (source/my_producer2.ipynb) inside the python virtual environment.
+10.2 Create a File Sink connector using Confluent control center to stream the records to an output file, refer info.txt.

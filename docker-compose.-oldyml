@@ -43,7 +43,7 @@ services:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker1:29091,PLAINTEXT_HOST://localhost:9091
+      KAFKA_ADVERTISED_LISTENERS: 'SSL://:9091,PLAINTEXT://broker1:29091,PLAINTEXT_HOST://localhost:9091',LISTENER_DOCKER_INTERNAL://broker1:29091,LISTENER_DOCKER_EXTERNAL://${DOCKER_HOST_IP:-127.0.0.1}:9091
       KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
@@ -160,7 +160,8 @@ services:
       SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
 
   connect:
-    image: cnfldemos/cp-server-connect-datagen:0.5.0-6.2.0
+    # image: cnfldemos/cp-server-connect-datagen:0.5.0-6.2.0
+    image: confluentinc/cp-kafka-connect:6.2.0
     hostname: connect
     container_name: connect
     depends_on:

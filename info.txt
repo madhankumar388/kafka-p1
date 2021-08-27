@@ -7,7 +7,7 @@ tail -f /tmp/kafka-ouput.txt
 # Key Convertor class
 org.apache.kafka.connect.storage.StringConverter 
 
-# Value Schema
+# Value Schema - Avro
 {
   "fields": [
     {
@@ -44,3 +44,6 @@ org.apache.kafka.connect.storage.StringConverter
   "name": "excess_cash",
   "type": "record"
 }
+
+# create and apecify a file path
+/etc/tmp

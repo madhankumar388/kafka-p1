@@ -14,7 +14,7 @@ OS: Ubuntu 20.04 LTS (WSL or VirtualMachine - prefferd )
   ```
 docker compose up -d
   ```
-5.  Open Confluent Contrl Center link below and wait till the cluster is healthy.\ 
+5.  Open Confluent Contrl Center link below and wait till the cluster is healthy.
 http://localhost:9021/clusters
 
 6. Create Python Virtual enviromnment, activate it and install requirements.txt\

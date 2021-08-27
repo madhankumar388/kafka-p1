@@ -30,6 +30,7 @@ https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-micro
 8. Start Jupyterlap lab and open it in your browser
 ```
 jupyter lab --no-browser
+# wsl --shutdown if you are unable to open jupyterlab on local host
 ```
 9.1 Install JDBC Sink connector in the connect container, and copy the config files into the container
 ```
